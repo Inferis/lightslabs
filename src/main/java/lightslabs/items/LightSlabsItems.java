@@ -15,6 +15,9 @@ import java.util.function.BiFunction;
 public class LightSlabsItems {
     public static BlockItem GLOWSTONE_SLAB;
     public static BlockItem SEA_LANTERN_SLAB;
+    public static BlockItem OCHRE_FROGLIGHT_SLAB;
+    public static BlockItem VERDANT_FROGLIGHT_SLAB;
+    public static BlockItem PEARLESCENT_FROGLIGHT_SLAB;
 
     public static void registerItems() {
         GLOWSTONE_SLAB = registerItem(
@@ -26,6 +29,21 @@ public class LightSlabsItems {
                 "sea_lantern_slab",
                 BlockItem::new,
                 LightSlabsBlocks.SEA_LANTERN_SLAB,
+                new Item.Properties());
+        OCHRE_FROGLIGHT_SLAB = registerItem(
+                "ochre_froglight_slab",
+                BlockItem::new,
+                LightSlabsBlocks.OCHRE_FROGLIGHT_SLAB,
+                new Item.Properties());
+        VERDANT_FROGLIGHT_SLAB = registerItem(
+                "verdant_froglight_slab",
+                BlockItem::new,
+                LightSlabsBlocks.VERDANT_FROGLIGHT_SLAB,
+                new Item.Properties());
+        PEARLESCENT_FROGLIGHT_SLAB = registerItem(
+                "pearlescent_froglight_slab",
+                BlockItem::new,
+                LightSlabsBlocks.PEARLESCENT_FROGLIGHT_SLAB,
                 new Item.Properties());
     }
 
