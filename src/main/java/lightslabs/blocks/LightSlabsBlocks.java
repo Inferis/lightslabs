@@ -16,6 +16,7 @@ import java.util.function.Function;
 
 public class LightSlabsBlocks {
     public static Block GLOWSTONE_SLAB;
+    public static Block SEA_LANTERN_SLAB;
 
     public static void registerBlocks() {
         GLOWSTONE_SLAB = registerBlock(
@@ -24,6 +25,17 @@ public class LightSlabsBlocks {
                 BlockBehaviour.Properties.of()
                         .mapColor(MapColor.SAND)
                         .instrument(NoteBlockInstrument.PLING)
+                        .strength(0.3f)
+                        .sound(SoundType.GLASS)
+                        .lightLevel(statex -> 15)
+                        .isRedstoneConductor(Blocks::never)
+        );
+        SEA_LANTERN_SLAB = registerBlock(
+                "sea_lantern_slab",
+                GlowstoneSlabBlock::new,
+                BlockBehaviour.Properties.of()
+                        .mapColor(MapColor.QUARTZ)
+                        .instrument(NoteBlockInstrument.HAT)
                         .strength(0.3f)
                         .sound(SoundType.GLASS)
                         .lightLevel(statex -> 15)

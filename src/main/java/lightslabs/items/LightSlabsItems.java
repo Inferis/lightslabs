@@ -14,12 +14,18 @@ import java.util.function.BiFunction;
 
 public class LightSlabsItems {
     public static BlockItem GLOWSTONE_SLAB;
+    public static BlockItem SEA_LANTERN_SLAB;
 
     public static void registerItems() {
         GLOWSTONE_SLAB = registerItem(
                 "glowstone_slab",
                 BlockItem::new,
                 LightSlabsBlocks.GLOWSTONE_SLAB,
+                new Item.Properties());
+        SEA_LANTERN_SLAB = registerItem(
+                "sea_lantern_slab",
+                BlockItem::new,
+                LightSlabsBlocks.SEA_LANTERN_SLAB,
                 new Item.Properties());
     }
 
