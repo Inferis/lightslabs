@@ -21,6 +21,7 @@ public class LightSlabsBlocks {
     public static Block OCHRE_FROGLIGHT_SLAB;
     public static Block VERDANT_FROGLIGHT_SLAB;
     public static Block PEARLESCENT_FROGLIGHT_SLAB;
+    public static Block SHROOMLIGHT_SLAB;
 
     public static void registerBlocks() {
         GLOWSTONE_SLAB = registerBlock(
@@ -69,6 +70,15 @@ public class LightSlabsBlocks {
                         .mapColor(MapColor.COLOR_PINK)
                         .strength(0.3f)
                         .sound(SoundType.FROGLIGHT)
+                        .lightLevel(statex -> 15)
+        );
+        SHROOMLIGHT_SLAB = registerBlock(
+                "shroomlight_slab",
+                SlabBlock::new,
+                BlockBehaviour.Properties.of()
+                        .mapColor(MapColor.COLOR_RED)
+                        .strength(1.0f)
+                        .sound(SoundType.SHROOMLIGHT)
                         .lightLevel(statex -> 15)
         );
     }
