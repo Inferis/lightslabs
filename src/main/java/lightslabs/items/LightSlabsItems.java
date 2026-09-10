@@ -25,7 +25,7 @@ public class LightSlabsItems {
 
     private static BlockItem registerItem(final String identifier, final BiFunction<Block, Item.Properties, Item> factory, final Block block, final Item.Properties properties) {
         var key = ResourceKey.create(Registries.ITEM, LightSlabs.id(identifier));
-        var item = factory.apply(block, properties.setId(key));
+        var item = factory.apply(block, properties.useBlockDescriptionPrefix().requiredFeatures(block.requiredFeatures()).setId(key));
         return (BlockItem)Registry.register(BuiltInRegistries.ITEM, key, item);
     }
 }
