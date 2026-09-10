@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "pattern": [
+      "   ",
+      "   ",
+      "XXX"
+    ],
+    "key": {
+      "X": "minecraft:pearlescent_froglight"
+    },
+    "result": {
+      "id": "lightslabs:pearlescent_froglight_slab",
+      "count": 6
+    }
+}

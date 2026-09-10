@@ -21,6 +21,7 @@ public class LightSlabs implements ModInitializer {
 	public void onInitialize() {
 		LightSlabsBlocks.registerBlocks();
 		LightSlabsItems.registerItems();
+		LightSlabsItems.registerCreativeTabs();
 	}
 
 	public static Identifier id(String path) {

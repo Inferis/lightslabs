@@ -2,11 +2,13 @@ package lightslabs.items;
 
 import lightslabs.LightSlabs;
 import lightslabs.blocks.LightSlabsBlocks;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
@@ -47,6 +49,17 @@ public class LightSlabsItems {
                 new Item.Properties());
     }
 
+    public static void registerCreativeTabs() {
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(content -> {
+            content.accept(SEA_LANTERN_SLAB);
+        });
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(content -> {
+            content.accept(GLOWSTONE_SLAB);
+            content.accept(OCHRE_FROGLIGHT_SLAB);
+            content.accept(VERDANT_FROGLIGHT_SLAB);
+            content.accept(PEARLESCENT_FROGLIGHT_SLAB);
+        });
+    }
     private static BlockItem registerItem(final String identifier, final BiFunction<Block, Item.Properties, Item> factory, final Block block, final Item.Properties properties) {
         var key = ResourceKey.create(Registries.ITEM, LightSlabs.id(identifier));
         var item = factory.apply(block, properties.useBlockDescriptionPrefix().requiredFeatures(block.requiredFeatures()).setId(key));
