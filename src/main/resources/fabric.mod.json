@@ -12,7 +12,7 @@
 		"sources": "https://github.com/inferis/lightslabs"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/lightslabs/icon.png",
+	"icon": "assets/lightslabs/icon.jpg",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
