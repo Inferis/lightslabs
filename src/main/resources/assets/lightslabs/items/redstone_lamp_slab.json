@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "lightslabs:item/redstone_lamp_slab"
+  }
+}

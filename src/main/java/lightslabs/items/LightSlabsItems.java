@@ -21,6 +21,7 @@ public class LightSlabsItems {
     public static BlockItem VERDANT_FROGLIGHT_SLAB;
     public static BlockItem PEARLESCENT_FROGLIGHT_SLAB;
     public static BlockItem SHROOMLIGHT_SLAB;
+    public static BlockItem REDSTONE_LAMP_SLAB;
 
     public static void registerItems() {
         GLOWSTONE_SLAB = registerItem(
@@ -53,6 +54,11 @@ public class LightSlabsItems {
                 BlockItem::new,
                 LightSlabsBlocks.SHROOMLIGHT_SLAB,
                 new Item.Properties());
+        REDSTONE_LAMP_SLAB = registerItem(
+                "redstone_lamp_slab",
+                BlockItem::new,
+                LightSlabsBlocks.REDSTONE_LAMP_SLAB,
+                new Item.Properties());
     }
 
     public static void registerCreativeTabs() {
@@ -65,6 +71,9 @@ public class LightSlabsItems {
             content.accept(VERDANT_FROGLIGHT_SLAB);
             content.accept(PEARLESCENT_FROGLIGHT_SLAB);
             content.accept(SHROOMLIGHT_SLAB);
+        });
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(content -> {
+            content.accept(REDSTONE_LAMP_SLAB);
         });
     }
     private static BlockItem registerItem(final String identifier, final BiFunction<Block, Item.Properties, Item> factory, final Block block, final Item.Properties properties) {

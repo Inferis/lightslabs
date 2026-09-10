@@ -10,10 +10,13 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 
 import java.util.function.Function;
+import java.util.function.ToIntFunction;
 
 public class LightSlabsBlocks {
     public static Block GLOWSTONE_SLAB;
@@ -22,6 +25,7 @@ public class LightSlabsBlocks {
     public static Block VERDANT_FROGLIGHT_SLAB;
     public static Block PEARLESCENT_FROGLIGHT_SLAB;
     public static Block SHROOMLIGHT_SLAB;
+    public static Block REDSTONE_LAMP_SLAB;
 
     public static void registerBlocks() {
         GLOWSTONE_SLAB = registerBlock(
@@ -81,11 +85,24 @@ public class LightSlabsBlocks {
                         .sound(SoundType.SHROOMLIGHT)
                         .lightLevel(statex -> 15)
         );
+        REDSTONE_LAMP_SLAB = registerBlock(
+                "redstone_lamp_slab",
+                RedstoneLampSlabBlock::new,
+                BlockBehaviour.Properties.of()
+                        .mapColor(MapColor.TERRACOTTA_ORANGE)
+                        .strength(0.3f)
+                        .sound(SoundType.GLASS)
+                        .lightLevel(litBlockEmission(15))
+        );
     }
 
     private static Block registerBlock(final String identifier, final Function<BlockBehaviour.Properties, Block> factory, final BlockBehaviour.Properties properties) {
         var key = ResourceKey.create(Registries.BLOCK, LightSlabs.id(identifier));
         var block = factory.apply(properties.setId(key));
         return Registry.register(BuiltInRegistries.BLOCK, key, block);
+    }
+
+    private static ToIntFunction<BlockState> litBlockEmission(final int lightEmission) {
+        return state -> state.getValue(BlockStateProperties.LIT) ? lightEmission : 0;
     }
 }
