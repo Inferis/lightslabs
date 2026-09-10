@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lightslabs:block/glowstone_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/glowstone"
+    },
+    "type=top": {
+      "model": "lightslabs:block/glowstone_slab_top"
+    }
+  }
+}
