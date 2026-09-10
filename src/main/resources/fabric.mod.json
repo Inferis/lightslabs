@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "lightslabs",
+	"version": "${version}",
+	"name": "Light Slabs",
+	"description": "Provides light sources in the form of slabs of the vanilla full blocks.",
+	"authors": [
+		"Inferis"
+	],
+	"contact": {
+		"homepage": "https://inferis.org/",
+		"sources": "https://github.com/inferis/lightslabs"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/lightslabs/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"lightslabs.LightSlabs"
+		],
+		"client": [
+			"lightslabs.client.LightSlabsClient"
+		]
+	},
+	"mixins": [
+		"lightslabs.mixins.json",
+		{
+			"config": "lightslabs.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
