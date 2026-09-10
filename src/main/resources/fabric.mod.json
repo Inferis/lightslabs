@@ -11,7 +11,7 @@
 		"homepage": "https://inferis.org/",
 		"sources": "https://github.com/inferis/lightslabs"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/lightslabs/icon.jpg",
 	"environment": "*",
 	"entrypoints": {
